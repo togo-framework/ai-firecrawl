@@ -1,6 +1,6 @@
 # ai-firecrawl — documentation
 
-  <img src=".github/assets/togo-mark.svg" alt="togo" height="64" />
+Firecrawl scrape/crawl data-source (self-hosted + API) for the togo AI kit
 
 ## Overview
 
@@ -20,24 +20,22 @@ A capability plugin — it self-registers on boot; no driver selector needed.
 
 ## Configuration
 
-Environment variables read by this plugin (extracted from the source):
+Environment variables read by this plugin (extracted from the source — see the gateway/provider docs for each value):
 
-| Env var | Notes |
-|---|---|
-| `FIRECRAWL_API_KEY` | _see provider docs_ |
-| `FIRECRAWL_URL` | _see provider docs_ |
-| `G` | _see provider docs_ |
+| Env var |
+|---|
+| `FIRECRAWL_API_KEY"` |
+| `FIRECRAWL_URL"` |
 
 ## Usage
 
 ```go
 // A data source for ai-rag / agents: fetch/scrape/search web content.
-src := firecrawl.FromKernel(k)
-docs, err := src.Fetch(ctx, "https://example.com")
+docs, err := firecrawl.FromKernel(k).Fetch(ctx, "https://example.com")
 ```
 
 ## Links
 
 - Marketplace: https://to-go.dev/marketplace
 - Source: https://github.com/togo-framework/ai-firecrawl
-- README: ../README.md
+- Full README: ../README.md
